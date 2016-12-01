@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 
 # node installing setup
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 0.10.33
+ENV NODE_VERSION 7.1.0
 
 # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash \
@@ -24,5 +24,5 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 
 # create directory to store contents of local directory
-RUN mkdir src
-RUN cd src
+RUN mkdir /usr/local/src/src
+RUN cd /usr/local/src/src
